@@ -1,1 +1,1 @@
-"# Django_Galerie" 
+"Django_Galerie" 
