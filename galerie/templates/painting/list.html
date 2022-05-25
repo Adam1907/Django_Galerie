@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Seznam obrazů{% endblock %}
+
+{% block content %}
+<h2>Seznam</h2>
+    <div class="row">
+              {% for obraz in paintings %}
+                  <div class="col">
+                      <img src="{{ obraz.picture.url }}" class="img-fluid">
+                      {{obraz}}
+                      {{ obraz.author }}
+                  </div>
+        {% endfor %}
+            </div>
+
+    {% endblock %}
+

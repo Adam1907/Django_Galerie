@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row">
+              {% for obraz in paintings %}
+                  <div class="col">
+                      <img src="{{ obraz.picture.url }}" class="img-fluid">
+                      {{obraz}}
+                      {{ obraz.author }}
+                  </div>
+        {% endfor %}
+            </div>
+    {% endblock %}
