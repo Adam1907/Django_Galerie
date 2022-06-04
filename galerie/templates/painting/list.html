@@ -2,16 +2,15 @@
 {% block title %}Seznam obrazů{% endblock %}
 
 {% block content %}
-<h2>Seznam</h2>
+<h2>Kompletní galerie({{paintings_list.count}})</h2>
     <div class="row">
-              {% for obraz in paintings %}
+              {% for obraz in paintings_list %}
                   <div class="col">
-                      <img src="{{ obraz.picture.url }}" class="img-fluid">
+                      <a href="{% url 'painting_detail' obraz.pk %}"><img src="{{ obraz.picture.url }}" class="img-fluid"></a>
                       {{obraz}}
                       {{ obraz.author }}
                   </div>
         {% endfor %}
             </div>
-
     {% endblock %}
 

@@ -1,12 +1,11 @@
 {% extends "base.html" %}
-
 {% block content %}
+    <h1 class="text-center">Nejstarší obrazy</h1>
     <div class="row">
               {% for obraz in paintings %}
-                  <div class="col">
-                      <img src="{{ obraz.picture.url }}" class="img-fluid">
-                      {{obraz}}
-                      {{ obraz.author }}
+                 <div class="col">
+                     <a href="{% url 'painting_detail' obraz.pk %}"><img src="{{ obraz.picture.url }}" class="img-fluid"></a>
+                      <div class="row">{{obraz}} - {{ obraz.author }}</div>
                   </div>
         {% endfor %}
             </div>

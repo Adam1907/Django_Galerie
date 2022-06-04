@@ -6,7 +6,7 @@ from django.views.generic import ListView, DetailView
 def index(request):
     num_paintings = Painting.objects.all().count()
     num_authors = Author.objects.all().count()
-    paintings = Painting.objects.all()
+    paintings = Painting.objects.order_by('year')[:4]
 
     context = {
         'nadpis': 'Galerie',

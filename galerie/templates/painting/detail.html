@@ -1,6 +1,28 @@
 {% extends "base.html" %}
-{% block title %}{% endblock %}
-
+{% block title %}{{painting_detail.name}}{% endblock %}
 {% block content %}
-<h2>Detail</h2>
+
+<h2 class="text-center">{{painting_detail}}</h2>
+
+
+    <div class="container mb-5">
+    <div class="row">
+    <div class="col-sm">
+        <h2>Popis</h2>
+        <p>{{ painting_detail.description }}</p>
+    </div>
+    <div class="col-sm">
+       {% if painting_detail.picture.url %}
+               <a href="{{ painting_detail.picture.url }}" data-toggle="lightbox" data-gallery="gallery">
+                  <img src="{{ painting_detail.picture.url }}" class="img-fluid">
+               </a>
+        {% endif %}
+    </div>
+    <div class="col-sm">
+        <p>Autor: {{ painting_detail.author }}</p>
+        <p>Rok vzniku: {{ painting_detail.year }}</p>
+        <p>Cena: {{ painting_detail.price }} Kč</p>
+    </div>
+  </div>
+    </div>
 {% endblock %}

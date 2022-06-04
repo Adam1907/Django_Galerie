@@ -21,8 +21,8 @@
                 <div class="navbar-collapse collapse flex-column mt-md-0 mt-4 pt-md-0" id="navbarWEX">
                     <a class="nav-link navbar-brand active" href="~/Views/Forms/ControlPanel.cshtml"><span class="fa fa-home"></span></a>
                     <a href="{% url 'index' %}" class="nav-link">Úvod</a>
-                    <a href="{% url 'paintings' %}" class="nav-link">Obrazy</a>
-                    <a href="" class="nav-link">Autoři</a>
+                    <a href="{% url 'paintings' %}" class="nav-link">Obrazy({{ num_paintings }})</a>
+                    <a href="" class="nav-link">Autoři({{ num_authors }})</a>
                 </div>
             </nav>
         </div>
